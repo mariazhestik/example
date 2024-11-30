@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список видавців</title>
+</head>
+<body>
+<h1>Список видавців</h1>
+<div th:each="publisher : ${publishers}">
+    <h3 th:text="${publisher.name}">Назва видавця</h3>
+    <p>Книги цього видавця:
+        <span th:each="book : ${publisher.books}" th:text="${book.title}">Назва книги</span>
+    </p>
+    <hr />
+</div>
+</body>
+</html>

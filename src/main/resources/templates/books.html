@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список книг</title>
+</head>
+<body>
+<h1>Список книг</h1>
+<div th:each="book : ${books}">
+    <h3 th:text="${book.title}">Назва книги</h3>
+    <p th:text="${book.anons}">Анонс книги</p>
+    <p th:text="${book.description}">Повний текст книги</p>
+    <p>Перегляди: <span th:text="${book.views}">0</span></p>
+    <p>Жанр: <span th:text="${book.genre.name}">Жанр книги</span></p>
+    <p>Видавництво: <span th:text="${book.publisher.name}">Видавництво книги</span></p>
+    <p>Автори:
+        <span th:each="author : ${book.authors}" th:text="${author.name} + ' '"> </span>
+    </p>
+    <hr />
+</div>
+</body>
+</html>

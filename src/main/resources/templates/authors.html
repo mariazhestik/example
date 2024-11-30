@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Список авторів</title>
+</head>
+<body>
+<h1>Список авторів</h1>
+<div th:each="author : ${authors}">
+  <h3 th:text="${author.name}">Ім'я автора</h3>
+  <p>Книги автора:
+    <span th:each="book : ${author.books}" th:text="${book.title}">Назва книги</span>
+  </p>
+  <hr />
+</div>
+</body>
+</html>
